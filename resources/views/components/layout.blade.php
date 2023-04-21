@@ -24,7 +24,7 @@
         <div class="space-x-2 ">
           <span class="text-white p-4"><a href="/">Home</a></span>
           <span class="text-white p-4"><a href="#">Services</a></span>
-          <span class="text-white p-4"><a href="{{ route('index') }}">Gallery</a></span>
+          <span class="text-white p-4"><a href="{{ route('index') }}">Cars</a></span>
           <span class="text-white p-4"><a href="#">Contact</a></span>
           
           <span class="text-white p-4">

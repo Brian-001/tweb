@@ -48,3 +48,5 @@ Route::get('/', function () {
 // });
 
 Route::get('/car/index', [CarController::class, 'index'])->name('index');
+
+Route::get('/car/create', [CarController::class, 'create'])->name('create');
