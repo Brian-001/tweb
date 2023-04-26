@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
 return new class extends Migration
 {
     /**
@@ -13,10 +14,13 @@ return new class extends Migration
     {
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('car_id')->nullable()->default(0);
+            $table->string('name');
             $table->integer('horsepower');
-            $table->integer('speed');
+            $table->integer('topspeed');
+            $table->integer('acceleration');
             $table->date('model');
-            $table->integer('price');
+            $table->decimal('price', 9, 2);
             $table->timestamps();
         });
     }

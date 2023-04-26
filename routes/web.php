@@ -49,4 +49,6 @@ Route::get('/', function () {
 
 Route::get('/car/index', [CarController::class, 'index'])->name('index');
 
-Route::get('/car/create', [CarController::class, 'create'])->name('create');
+Route::get('/car/create', [CarController::class, 'create'])->name('create')->middleware('auth');
+
+Route::post('/car', [CarController::class, 'store'])->name('store')->middleware('auth');
