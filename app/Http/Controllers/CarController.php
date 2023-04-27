@@ -9,14 +9,13 @@ class CarController extends Controller
 {
     //Shows all cars
     public function index(){
-        return view('car.index', [
-            'car' => Car::latest()->paginate(4)
-        ]);
+        $cars = Car::orderBy('id','desc')->paginate(4);
+        return view('cars.index', compact('cars'));
     }
 
     //Show create car form
     public function create(){
-        return view('car.create');
+        return view('cars.create');
     }
 
     //stores car fron car_form to database 
@@ -26,19 +25,14 @@ class CarController extends Controller
             'horsepower' => 'required',
             'topspeed' => 'required',
             'acceleration' => 'required',
-            'model' => ['required', 'date'],
+            'model' => 'required',
             'price' => 'required' 
         ]);
-        //
-        $form_fields['user_id'] = auth()->id();
+
+        // $form_fields['user_id'] = auth()->id();
         
         Car::create($form_fields);
         return redirect('/')->with('message', 'Car created Successfully');
     }
-
-    //Show edit form
-
-    public function edit(Car $car){
-        return view('car.edit', ['car' => $car]);
-    }
+    
 }
