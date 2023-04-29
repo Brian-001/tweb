@@ -1,5 +1,5 @@
 <x-layout>
-    <form action="/car" method="POST" enctype="multipart/form-data" class=" bg-white mt-6 h-[80vh] w-1/2 mx-auto shadow-md" >
+    <form action="/cars" method="POST" enctype="multipart/form-data" class=" bg-white mt-6 h-[100vh] w-1/2 mx-auto shadow-md" >
         @csrf
         <div class="p-6">
           <div class="mb-6 mt-2 flex items-center justify-center">
@@ -12,7 +12,7 @@
           <!-- Name field -->
           <div class="mb-6">
             <label for="name" class="mb-2">Name</label>
-            <input type="text" name="name" id="name" required min=0 max="1000" 
+            <input type="text" name="name"required min=0 max="1000" 
             value="{{ old('name') }}" class="w-1/2 p-3 border border-slate-800">
 
             @error('name')
@@ -23,7 +23,7 @@
           <!-- Horsepower field -->
           <div class="mb-6">
             <label for="horsepower">Horsepower</label>
-            <input type="number" name="horsepower" id="horsepower" required min=0 max="1000" 
+            <input type="number" name="horsepower" required min=0 max="1000" 
             value="{{ old('horsepower')}}"class="w-1/2 p-3 border border-slate-800">
 
             @error('horsepower')
@@ -35,7 +35,7 @@
           <!-- Top Speed field  -->
           <div class="mb-6">
             <label for="topspeed">Top Speed</label>
-            <input type="number" name="topspeed" id="topspeed" required min=0 max="1000" 
+            <input type="number" name="topspeed" required min=0 max="1000" 
             value="{{ old('topspeed')}}" class="w-1/2 p-3 border border-slate-800">
 
             @error('topspeed')
@@ -47,7 +47,7 @@
           <!-- Acceleration field -->
           <div class="mb-6">
             <label for="acceleration">Acceleration</label>
-            <input type="number" name="acceleration" id="acceleration" required min=0 max="5" 
+            <input type="number" name="acceleration" required min=0 max="5" 
             value="{{ old('acceleration') }}" class="w-1/2 p-3 border border-slate-800">
 
             @error('acceleration')
@@ -59,7 +59,7 @@
           <!-- Model Field -->
           <div class="mb-6">
             <label for="model">Model</label>
-            <input type="date" name="model" id="model" 
+            <input type="date" name="model" 
             value="{{ old('model') }}" class="w-1/2 p-3 border border-slate-800">
 
             @error('model')
@@ -70,7 +70,7 @@
           <!-- Price Field -->
           <div class="mb-6">
             <label for="price">Price</label>
-            <input type="number" name="price" id="price" 
+            <input type="number" name="price"
             value="{{ old('price') }}" class="w-1/2 p-3 border border-slate-800">
 
             @error('price')
@@ -80,9 +80,12 @@
           </div>
 
           <!-- Image Upload -->
-          <!-- <div class="mb-6">
-            <input type="file" name="image" id="" class="outline-none">
-          </div> -->
+          <div class="mb-6">
+            <input type="file" name="logo" class="outline-none border border-white">
+            @error('logo')
+              <p class = "text-red-500 text-xs mt-1">{{$message}}</p>
+            @enderror
+          </div> 
 
           <div class="mb-6 flex items-center justify-center">
             <input type="submit" value="Create" class="bg-slate-800 text-white px-4 py-2 cursor-pointer">

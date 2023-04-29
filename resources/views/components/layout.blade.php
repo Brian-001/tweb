@@ -26,6 +26,8 @@
           <span class="text-white p-4"><a href="#">Services</a></span>
           <span class="text-white p-4"><a href="{{ route('index') }}">Cars</a></span>
           <span class="text-white p-4"><a href="#">Contact</a></span>
+
+          <span class="text-white p-4"><a href="{{ route('create') }}">Create</a></span>
           
           <span class="text-white p-4">
             <form action="/logout" method="POST" class="inline">
