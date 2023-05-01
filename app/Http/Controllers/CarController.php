@@ -13,6 +13,13 @@ class CarController extends Controller
         return view('cars.index', compact('cars'));
     }
 
+    //show single car
+    public function show($id){
+        //Passing variable $car tothe view using this controller
+        $car = Car::find($id);
+        return view('cars.show', compact('car'));
+    }
+
     //Show create car form
     public function create(){
         return view('cars.create');

@@ -20,8 +20,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Show car view
+
 Route::get('/cars/index', [CarController::class, 'index'])->name('index');
+
+//show create form 
 
 Route::get('/cars/create', [CarController::class, 'create'])->name('create')->middleware('auth');
 
+//Stores created cars in db
+
 Route::post('/cars', [CarController::class, 'store'])->name('store')->middleware('auth');
+
+//Show single car
+Route::get('/cars/{car}', [CarController::class, 'show'])->middleware('auth');
