@@ -27,7 +27,7 @@
                   <p class="text-gray-700 leading-normal mb-2"><span class="font-bold">Topspeed </span>{{$car->topspeed}}</p>
                   <p class="text-gray-700 leading-normal mb-2"><span class="font-bold">Acceleration </span>{{$car->acceleration}}</p>
                   <p class="text-gray-700 leading-normal mb-2"><span class="font-bold">Model </span>{{$car->model}}</p>
-                  <p class="text-gray-700 leading-normal mb-2"><span class="font-bold">Price </span>{{$car->price}}</p>
+                  <p class="text-gray-700 leading-normal mb-2"><span class="font-bold">Price </span>{{$car->formatted_price}}</p>
                   <button class="bg-slate-700 hover:bg-slate-500 text-white font-bold py-2 px-4 rounded">Add to Cart</button>
                 </div>
             </div>

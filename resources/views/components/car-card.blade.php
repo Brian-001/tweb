@@ -10,7 +10,7 @@
             <p>Top Speed: <span class="font-sm text-slate-400">{{$car->topspeed}}</span></p>
             <p>Acceleration <span class="font-sm text-slate-400">{{$car->acceleration}}</span></p>
             <p>Model: <span class="font-sm text-slate-400">{{$car->model}}</span></p>
-            <p>Price: <span class="font-sm text-slate-400"> $ {{$car->price}}</span></p>
+            <p>Price: <span class="font-sm text-slate-400"> $ {{$car->formatted_price}}</span></p>
             <a href="/cars/{{$car->id}}" class=" bg-slate-700 hover:bg-slate-500 text-white py-1 px-2 rounded">Explore More</a>
         </div>
     </div>
