@@ -16,10 +16,10 @@
     </div>  --}}
 
     <div class="flex justify-center">
-        <div class="w-full md:w-2/3 h-full bg-white">
+        <div class="w-full md:w-2/3 h-full bg-white rounded-md">
             <div class="flex flex-wrap py-6">
                 <div class="w-full md:w-1/2 px-6">
-                  <img src="{{$car->logo? asset('storage/' .$car->logo) : asset('/images/mustung1.jpg')}}" alt="No Image" class="w-full">
+                  <img src="{{$car->car_image? asset('storage/' .$car->car_image) : asset('/images/mustung1.jpg')}}" alt="No Image" class="w-full">
                 </div>
                 <div class="w-full md:w-1/2 px-6">
                   <h2 class="text-2xl font-bold mb-2">{{$car->name}}</h2>

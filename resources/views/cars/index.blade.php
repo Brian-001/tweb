@@ -5,8 +5,6 @@
          @foreach ($cars as $car)
            <x-car-card :car="$car" />
         @endforeach
-
-         
       </div>
    </div>
    <div class="mt-6 p-4">

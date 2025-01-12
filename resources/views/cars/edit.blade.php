@@ -83,7 +83,7 @@
 
           <!-- Image Upload -->
           <div class="mb-6">
-            <input type="file" name="image" id="" class="outline-none">
+            <input type="file" name="car_image" id="" class="outline-none">
           </div>
 
           <div class="mb-6 flex items-center justify-center">

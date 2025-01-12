@@ -81,8 +81,8 @@
 
           <!-- Image Upload -->
           <div class="mb-6">
-            <input type="file" name="logo" class="outline-none border border-white">
-            @error('logo')
+            <input type="file" name="car_image" class="outline-none border border-white">
+            @error('car_image')
               <p class = "text-red-500 text-xs mt-1">{{$message}}</p>
             @enderror
           </div> 

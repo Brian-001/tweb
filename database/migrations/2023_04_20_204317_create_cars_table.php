@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('car_id')->nullable()->default(0);
             $table->string('name');
-            $table->string('logo')->nullable();
+            $table->string('car_image')->nullable();
             $table->integer('horsepower');
             $table->integer('topspeed');
             $table->integer('acceleration');

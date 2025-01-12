@@ -39,11 +39,12 @@ class CarController extends Controller
 
         // $form_fields['user_id'] = auth()->id();
 
-        if($request->hasFile('logo')){
-            $form_fields['logo'] = $request->file('logo')->store('logos', 'public');
-        }
+        // if($request->hasFile('logo')){
+        //     $form_fields['logo'] = $request->file('logo')->store('logos', 'public');
+        // }
+        $imagePath = request('car_image')->store('car_images', 'public');
         
-        Car::create($form_fields);
+        Car::create($form_fields, $imagePath);
         return redirect('/')->with('message', 'Car created Successfully');
     }
     

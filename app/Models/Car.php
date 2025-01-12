@@ -9,5 +9,8 @@ class Car extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'horsepower', 'topspeed', 'acceleration', 'model', 'price']; 
+    protected $fillable = ['name', 'horsepower', 'topspeed', 'acceleration', 'model', 'price', 'car_image']; 
+
+
+    public function getAtt
 }
