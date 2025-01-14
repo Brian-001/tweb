@@ -24,7 +24,7 @@
                 <div class="w-full md:w-1/2 px-6">
                   <h2 class="text-2xl font-bold mb-2">{{$car->name}}</h2>
                   <p class="text-gray-700 leading-normal mb-2"><span class="font-bold">HorsePower </span>{{$car->horsepower}}</p>
-                  <p class="text-gray-700 leading-normal mb-2"><span class="font-bold">Topspeed </span>{{$car->topspeed}}</p>
+                  <p class="text-gray-700 leading-normal mb-2"><span class="font-bold">Topspeed </span>{{$car->topspeed}} mph</p>
                   <p class="text-gray-700 leading-normal mb-2"><span class="font-bold">Acceleration </span>{{$car->acceleration}}</p>
                   <p class="text-gray-700 leading-normal mb-2"><span class="font-bold">Model </span>{{$car->model}}</p>
                   <p class="text-gray-700 leading-normal mb-2"><span class="font-bold">Price </span>{{$car->formatted_price}}</p>
