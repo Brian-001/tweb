@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('car_image')->nullable();
             $table->integer('horsepower');
             $table->integer('topspeed');
-            $table->integer('acceleration');
+            $table->float('acceleration');
             $table->date('model');
             $table->decimal('price', 9, 2);
             $table->timestamps();

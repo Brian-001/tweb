@@ -47,7 +47,7 @@
           <!-- Acceleration field -->
           <div class="mb-6">
             <label for="acceleration">Acceleration</label>
-            <input type="number" name="acceleration" required min=0 max="5" 
+            <input type="number" name="acceleration" required step="0.01" 
             value="{{ old('acceleration') }}" class="w-1/2 p-3 border border-slate-800">
 
             @error('acceleration')

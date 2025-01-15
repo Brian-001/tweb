@@ -34,17 +34,17 @@ class CarController extends Controller
             'topspeed' => 'required',
             'acceleration' => 'required',
             'model' => 'required',
-            'price' => 'required' 
+            'price' => 'required',
+            'car_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp,avif|max:2048'
         ]);
 
-        // $form_fields['user_id'] = auth()->id();
-
-        // if($request->hasFile('logo')){
-        //     $form_fields['logo'] = $request->file('logo')->store('logos', 'public');
-        // }
-        $imagePath = request('car_image')->store('car_images', 'public');
+        if($request->hasFile('car_image')){
+            $imagePath = request('car_image')->store('car_images', 'public');
+            $form_fields['car_image'] = $imagePath;
+        }
         
-        Car::create($form_fields, $imagePath);
+        
+        Car::create($form_fields);
         return redirect('/')->with('message', 'Car created Successfully');
     }
     
