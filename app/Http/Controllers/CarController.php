@@ -55,7 +55,27 @@ class CarController extends Controller
         
         
         Car::create($form_fields);
-        return redirect('/')->with('message', 'Car created Successfully');
+        return redirect('cars.index')->with('message', 'Car created Successfully');
     }
-    
+
+    public function update(Request $request, $id){
+        $car = Car::find($id);
+        $form_fields = $request->validate([
+            'name'=>'required',
+            'horsepower'=>'required',
+            'topspeed'=>'required',
+            'acceleration'=>'required',
+            'model'=>'required',
+            'price'=>'required',
+            'car_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp,avif|max:2048'
+
+        ]);
+        if ($request->hasFile('car_image')){
+            $imagePath = request('car_image')->store('car_images', 'public');
+            $form_filelds['car_image'] = $imagePath;
+        }
+
+        $car->update($form_fields);
+        return redirect('cars.index')->with('message', 'Car updated Successfully');
+    }
 }

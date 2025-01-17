@@ -8,8 +8,8 @@
         @endforeach
       </div>
    </div>
-   <div class="mt-6 p-4">
-        {{$cars->links()}}
-    </div>
+    <div class="flex justify-center mt-4 gap-4">
+      {{ $cars->links('vendor/pagination/tailwind') }} 
+  </div>
 </x-layout>
 
