@@ -1,4 +1,5 @@
 <x-layout>
+    {{-- <x-search /> --}}
     @include('partials._search')
    <div class="flex mx-auto">
       <div class="grid grid-col sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6 ml-6 ">

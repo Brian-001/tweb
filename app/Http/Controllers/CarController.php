@@ -8,9 +8,19 @@ use App\Models\Car;
 class CarController extends Controller
 {
     //Shows all cars
-    public function index(){
-        $cars = Car::orderBy('id','desc')->paginate(6);
-        return view('cars.index', compact('cars'));
+    public function index(Request $request)
+    {
+        $searchTerm = $request->input('search');
+        
+        $cars = Car::query();
+        if($searchTerm){
+            $cars = Car::where('name', 'like', "%{$searchTerm}%")
+                        ->orWhere('price', 'like', "%{$searchTerm}%");
+        }
+        
+        $cars = $cars->orderBy('id', 'desc')->paginate(6);
+    
+        return view('cars.index', compact('cars', 'searchTerm'));
     }
 
     //show single car
